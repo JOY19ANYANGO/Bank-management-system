@@ -1,8 +1,8 @@
 """created tables
 
-Revision ID: 7a9d8f0b817a
+Revision ID: 5dfa996a3f85
 Revises: 76c6fd47701a
-Create Date: 2023-09-06 10:24:49.973904
+Create Date: 2023-09-06 11:01:41.384818
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '7a9d8f0b817a'
+revision: str = '5dfa996a3f85'
 down_revision: Union[str, None] = '76c6fd47701a'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -30,7 +30,7 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('account_type', sa.String(), nullable=True),
     sa.Column('account_balance', sa.Float(), nullable=True),
-    sa.Column('customer_id', sa.Integer(), nullable=True),
+    sa.Column('customer_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['customer_id'], ['customers.id'], name=op.f('fk_accounts_customer_id_customers')),
     sa.PrimaryKeyConstraint('id')
     )
@@ -39,8 +39,8 @@ def upgrade() -> None:
     sa.Column('date', sa.Date(), nullable=True),
     sa.Column('description', sa.String(), nullable=True),
     sa.Column('amount', sa.Float(), nullable=True),
-    sa.Column('account_id', sa.Integer(), nullable=True),
-    sa.Column('customer_id', sa.Integer(), nullable=True),
+    sa.Column('account_id', sa.Integer(), nullable=False),
+    sa.Column('customer_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['account_id'], ['accounts.id'], name=op.f('fk_transactions_account_id_accounts')),
     sa.ForeignKeyConstraint(['customer_id'], ['customers.id'], name=op.f('fk_transactions_customer_id_customers')),
     sa.PrimaryKeyConstraint('id')
