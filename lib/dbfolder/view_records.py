@@ -8,6 +8,16 @@ engine = create_engine('sqlite:///bank.db')
 Session = sessionmaker(bind=engine)
 session = Session()
 
+def list_all_customers():
+    customers = session.query(Customer).all()
+    if customers:
+        print("List of All Customers:")
+        for customer in customers:
+            print(f"Customer ID: {customer.id}, Name: {customer.first_name} {customer.last_name}")
+    else:
+        print("No customers found in the database.")
+
+
 # Function to list accounts for a specific customer
 def list_accounts_for_customer(customer_id):
     customer = session.query(Customer).filter(Customer.id == customer_id).first()
@@ -40,3 +50,4 @@ def list_transactions_for_customer(customer_id):
 if __name__ == "__main__":
     list_accounts_for_customer(1)  # Replace 1 with the desired customer ID
     list_transactions_for_customer(1)  # Replace 1 with the desired customer ID
+    list_all_customers()
