@@ -23,12 +23,13 @@ class Transaction(Base):
     __tablename__ = "transactions"
     id = Column(Integer, primary_key=True)
     date = Column(Date, default=datetime.now)  # Use default=datetime.now
-    transaction_type = Column(String)
+    description = Column(String)
     amount = Column(Float)
     
 class Account(Base):
     __tablename__ = "accounts"
     id = Column(Integer, primary_key=True)
     account_type = Column(String)
+    account_balance = Column(Float)
     transaction_id = Column(Integer, ForeignKey('transactions.id'))
     customer_id = Column(Integer, ForeignKey('customers.id'))
