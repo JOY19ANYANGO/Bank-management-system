@@ -4,8 +4,7 @@ This bank management system project  performs the essential functions of banking
 * Create records
 * Delete records
    ## Preview
-   
-[Watch the Video](./scre.webm)
+   file:///home/joy/Development/code/phase-3/Bank-management-system/scre.webm
 
 
 
