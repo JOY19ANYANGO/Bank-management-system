@@ -4,6 +4,14 @@ This bank management system project  performs the essential functions of banking
 * Create records
 * Delete records!
 [Preview](<Screenshot from 2023-09-07 15-55-59.png>)
+   ## preview
+<img src="Screenshot from 2023-09-07 15-55-59.png" alt="Alt text" title="Optional title">
+<video width="640" height="360" controls>
+  <source src="scr.webm" type="webm">
+  Your browser does not support the video tag.
+</video>
+
+
      
 ## Table of Contents
 - [Technologiesused](#technologiesused)
