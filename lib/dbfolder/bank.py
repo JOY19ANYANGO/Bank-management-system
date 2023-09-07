@@ -97,12 +97,12 @@ def add_customer():
     first_name = input("Enter the first name of the customer: ").strip()
     last_name = input("Enter the last name of the customer: ").strip()
     
-    if isinstance(first_name, str) and isinstance(last_name, str):
+    if first_name.isalpha() and last_name.isalpha():
         customer_id = add_customer_to_db(first_name, last_name)
         print(f"Customer {first_name} {last_name} has been added to the database.")
         print(f"Customer ID: {customer_id.id}")
     else:
-        print("Invalid input. Please enter valid first and last names as strings.")
+        print("Invalid input. Please enter valid first and last names with alphabetic characters.")
 
         
 def add_account():
@@ -120,7 +120,7 @@ def add_account():
           
     # Prompt for account balance
     while True:
-        account_balance_str = input("Enter the account balance: ").strip()
+        account_balance_str = input("Enter the initial deposit: ").strip()
         try: 
            account_balance = float(account_balance_str)
            if account_balance <0:
