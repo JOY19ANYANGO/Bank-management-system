@@ -2,13 +2,9 @@
 This bank management system project  performs the essential functions of banking software. It lets the user
 * See database records.
 * Create records
-* Delete records
-   ## file:///home/joy/Videos/Screencasts/Screencast%20from%2007-09-2023%2003:21:58%20ALASIRI.webm
-
-
-file:///home/joy/Pictures/Screenshots/Screenshot%20from%202023-09-07%2015-43-45.png
-
-
+* Delete records!
+[Preview](<Screenshot from 2023-09-07 15-55-59.png>)
+     
 ## Table of Contents
 - [Technologiesused](#technologiesused)
 - [Installation](#installation)
