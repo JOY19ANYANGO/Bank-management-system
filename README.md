@@ -3,9 +3,10 @@ This bank management system project  performs the essential functions of banking
 * See database records.
 * Create records
 * Delete records
-   ## Preview
-   file:///home/joy/Development/code/phase-3/Bank-management-system/scre.webm
+   ## file:///home/joy/Videos/Screencasts/Screencast%20from%2007-09-2023%2003:21:58%20ALASIRI.webm
 
+
+file:///home/joy/Pictures/Screenshots/Screenshot%20from%202023-09-07%2015-43-45.png
 
 
 ## Table of Contents
