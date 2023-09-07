@@ -59,7 +59,7 @@ pipenv shell
 cd lib/dbfolder
 ```
 ```python
-python3 main.py
+python3 bank.py
 ```
 
 - Use the following options to navigate through the main menu:
