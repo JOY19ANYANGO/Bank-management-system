@@ -31,7 +31,7 @@ def delete_customer_and_associated_data(customer_id):
             # Commit the changes to the database
             session.commit()
 
-            print(f"Customer with ID {customer_id}, associated accounts, and transactions have been deleted.")
+            
         else:
             print(f"Customer with ID {customer_id} not found in the database.")
 
