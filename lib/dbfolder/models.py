@@ -21,6 +21,9 @@ class Customer(Base):
     
     accounts = relationship("Account", back_populates="customer")
     transactions = relationship("Transaction", back_populates="customer")
+    
+    def __repr__(self):
+        return f"{self.id},name:{self.first_name}{self.last_name}"
 
 class Transaction(Base):
     __tablename__ = "transactions"
@@ -34,6 +37,9 @@ class Transaction(Base):
     
     account = relationship("Account", back_populates="transactions")
     customer = relationship("Customer", back_populates="transactions")
+    
+    def __repr__(self):
+        return f"{self.id},date:{self.date},description:{self.description},amount:{self.amount}"
 
 class Account(Base):
     __tablename__ = "accounts"
@@ -45,3 +51,8 @@ class Account(Base):
     
     customer = relationship("Customer", back_populates="accounts")
     transactions = relationship("Transaction", back_populates="account")
+    
+    def __repr__(self):
+        return f"{self.id}, Account type:{self.account_type}, Account balance:{self.account_balance}"
+   
+        
