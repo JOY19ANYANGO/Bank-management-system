@@ -1,11 +1,13 @@
 from view_records import  list_all_customers,list_transactions_for_customer,list_accounts_for_customer
 from add_records import add_customer_to_db,add_account_to_db,customer_exists,add_transaction_to_db,account_exists,get_customer_id_and_balance_for_account,update_account_balance
+from delete_customer import delete_customer_and_associated_data
 from datetime import datetime
 def main():
     while True:
         print("Options:")
         print("1. Press 'S' to see records.")
         print("2. Press 'F' to add new records")
+        print("3  Press 'R' to delete customer and associated data.")
         print("2. Press 'Q' to quit.")
     
         
@@ -15,6 +17,8 @@ def main():
             view_records_menu()
         elif choice == 'f':
             add_records_menu()
+        elif choice == 'r':
+            delete_customer()    
         elif choice == 'q':
             print("Exiting the program.")
             break
@@ -210,7 +214,27 @@ def add_transaction():
         print(f"Transaction for customer {customer_id} and account {account_id} has been added to the database.")
         print(f"Transaction ID: {new_transaction.id}")
         print(f"Updated Account Balance: {new_balance}")
-
+def delete_customer():
+    print("\nDelete a customer:")
+    
+    # Prompt for customer ID
+    while True:
+        customer_id_str = input("Enter the ID of the customer: ").strip()
+       
+        try:
+            customer_id = int(customer_id_str)
+                  
+            if not (customer_id > 0 and customer_exists(customer_id)):
+                print("Customer not in the database.")
+            else:
+                break  
+        except ValueError:
+            print("Invalid input. Please enter a positive number for customer ID.")
+    
+    # Call the delete_customer_and_associated_data function with the validated parameters
+    delete_customer_and_associated_data(customer_id)
+    
+    print(f"Customer {customer_id} has been deleted from the database.")
 if __name__ == "__main__":
     main()
 
