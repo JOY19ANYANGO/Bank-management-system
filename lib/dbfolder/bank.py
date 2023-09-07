@@ -97,10 +97,13 @@ def add_customer():
     first_name = input("Enter the first name of the customer: ").strip()
     last_name = input("Enter the last name of the customer: ").strip()
     
-    if first_name and last_name :
-        customer_id = add_customer_to_db(first_name,last_name)
+    if isinstance(first_name, str) and isinstance(last_name, str):
+        customer_id = add_customer_to_db(first_name, last_name)
         print(f"Customer {first_name} {last_name} has been added to the database.")
-        print(f"Customer ID: {customer_id.id}")    
+        print(f"Customer ID: {customer_id.id}")
+    else:
+        print("Invalid input. Please enter valid first and last names as strings.")
+
         
 def add_account():
     print("\nAdd a new account:")
